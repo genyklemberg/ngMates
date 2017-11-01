@@ -1,4 +1,5 @@
 import {Component, OnInit, HostListener} from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 let runScrolling: any;
 
@@ -66,7 +67,14 @@ export class NavigationComponent implements OnInit {
     }
   };
 
-  constructor() {
+  constructor(meta: Meta, title: Title) {
+    title.setTitle('NgMates');
+
+    meta.addTags([
+      { name: 'author',   content: 'ngmates.com'},
+      { name: 'keywords', content: 'angular seo, angular 4 universal, angular firebase'},
+      { name: 'description', content: 'This is our Angular SEO-based App, enjoy it!' }
+    ]);
   }
 
   ngOnInit() {

@@ -9,14 +9,15 @@ import { AppComponent } from './app.component';
 import { Footer } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { WangularComponent } from './wangular/wangular.component';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyABKjpHd7u2JyXPlgn9gtswliKh5fB59x4",
-  authDomain: "hobbit-3c587.firebaseapp.com",
-  databaseURL: "https://hobbit-3c587.firebaseio.com",
-  projectId: "hobbit-3c587",
-  storageBucket: "hobbit-3c587.appspot.com",
-  messagingSenderId: "688486551372"
+  apiKey: "AIzaSyAcwWFz0x1xPGlVRm6yUfF06kT_nqnx0es",
+  authDomain: "ngmates-63ad3.firebaseapp.com",
+  databaseURL: "https://ngmates-63ad3.firebaseio.com",
+  projectId: "ngmates-63ad3",
+  storageBucket: "ngmates-63ad3.appspot.com",
+  messagingSenderId: "946715291870"
 };
 
 @NgModule({
@@ -24,7 +25,8 @@ export const firebaseConfig = {
     AppComponent,
     Footer,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    WangularComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'landing3-dsl'}),

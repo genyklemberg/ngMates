@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {NgForm} from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   items: FirebaseListObservable<any[]>;
   msgVal = '';
 
-  constructor(public af: AngularFireDatabase) {
+  constructor(public af: AngularFireDatabase, meta: Meta, title: Title) {
     this.mainImg = '../assets/images/main-img.jpg';
     this.mainVideo = '../assets/media/office.mp4';
 
@@ -27,6 +28,14 @@ export class HomeComponent implements OnInit {
           limitToLast: 50
         }
       });
+
+    title.setTitle('NgMates');
+
+    meta.addTags([
+      { name: 'author',   content: 'ngmates.com'},
+      { name: 'keywords', content: 'angular seo, angular 4 universal, angular firebase'},
+      { name: 'description', content: 'This is our Angular SEO-based App, enjoy it!' }
+    ]);
   }
 
   Send(desc: {}) {

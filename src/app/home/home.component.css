@@ -43,7 +43,7 @@ div#video-block:after {
 .text-video h2 {
   font-size: 60px;
   font-weight: 100;
-  transform: uppercase;
+  text-transform: uppercase;
   color: #fff;
   text-align: center;
 }
@@ -149,7 +149,7 @@ img {
 /*styles for about us section*/
 #about {
   background: #fff;
-  padding: 120px 0 60px;
+  padding: 60px 0 60px;
 }
 @media(max-width: 768px){
   #about {
@@ -189,7 +189,7 @@ img {
 }
 
 .about-container  {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 768px) {
@@ -204,13 +204,8 @@ img {
 /*styles for portfolio section*/
 
 #portfolio {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-@media(max-width: 768px) {
-  #portfolio {
-    padding: 40px 0;
-  }
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .text-center {
@@ -497,13 +492,9 @@ img {
   line-height: 21px;
   font-weight: 300;
   color: #666;
-  padding: 75px 0 120px;
+  padding: 30px 0 30px;
 }
-@media(max-width: 992px) {
-  #contact {
-    padding: 50px 0;
-  }
-}
+
 .classic-title {
   margin-bottom: 12px;
   padding-bottom: 8px;
@@ -604,13 +595,8 @@ strong {
 
 
 .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-@media(max-width: 768px) {
-  .section {
-    padding: 40px 0;
-  }
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .icon-small {
@@ -1365,4 +1351,19 @@ strong {
   -o-animation-name: fadeIn;
 	animation-name: fadeIn;
 }
-
+.about-content p:last-child{
+  background: #fdf7ff;
+  font-weight: bold;
+  padding: 5px;
+  border: 1px solid #efd6f7;
+}
+.about-text a{
+  font-size: 24px;
+}
+.about-text img{
+  width: 50px;
+  height: auto;
+}
+#team{
+  display: none;
+}
