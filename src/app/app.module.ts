@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { Footer } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { WangularComponent } from './wangular/wangular.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAcwWFz0x1xPGlVRm6yUfF06kT_nqnx0es",
@@ -25,8 +24,7 @@ export const firebaseConfig = {
     AppComponent,
     Footer,
     HomeComponent,
-    NavigationComponent,
-    WangularComponent
+    NavigationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'landing3-dsl'}),

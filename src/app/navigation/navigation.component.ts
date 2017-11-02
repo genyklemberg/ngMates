@@ -1,5 +1,4 @@
 import {Component, OnInit, HostListener} from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 
 let runScrolling: any;
 
@@ -9,6 +8,9 @@ let runScrolling: any;
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+
+  activeClassArray: string [] = ['#video-block', '#about', '#whyNg', '#skills', '#portfolio', '#contact'];
+  getActiveElements: {activeElem: any; position: number}[];
 
   scrolling(event): void {
     event.preventDefault();
@@ -29,29 +31,25 @@ export class NavigationComponent implements OnInit {
         window.scrollTo(0, elemPosition);
         clearInterval(runScrolling);
       } else {
-        scrollBy(0, step/10);
-        step = Math.round(getElem.getBoundingClientRect().top);
+        scrollBy(0, step / 10);
+        step = Math.round(getElem.getBoundingClientRect().top + 20);
         this.scrolling;
 
       }
     }, 7);
   }
 
-
-  activeClassArray: string [] = ['#video-block', '#about', '#skills', '#portfolio', '#team', '#contact'];
-  getActiveElements: {activeElem: any; position: number}[];
-
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll', [])
   private onWindowScroll = () => {
 
     this.getActiveElements = this.activeClassArray.map(function (a) {
       let elem: any = document.querySelector(a);
       let activeElem = document.querySelector(`a[href="${a}"]`);
       let position: number = elem.offsetTop;
-      return {activeElem, position}
+      return {activeElem, position};
     });
 
-    let positionTop: number = window.pageYOffset + 78;
+    let positionTop: number = window.pageYOffset + 20;
     if (this.getActiveElements[0].position > positionTop) {
       let home = document.querySelector('a[href="#top"]');
       home.classList.add('active');
@@ -63,18 +61,8 @@ export class NavigationComponent implements OnInit {
           });
           item.activeElem.classList.add('active');
         }
-      })
+      });
     }
-  };
-
-  constructor(meta: Meta, title: Title) {
-    title.setTitle('NgMates');
-
-    meta.addTags([
-      { name: 'author',   content: 'ngmates.com'},
-      { name: 'keywords', content: 'angular seo, angular 4 universal, angular firebase'},
-      { name: 'description', content: 'This is our Angular SEO-based App, enjoy it!' }
-    ]);
   }
 
   ngOnInit() {

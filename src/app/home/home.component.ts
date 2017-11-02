@@ -29,12 +29,17 @@ export class HomeComponent implements OnInit {
         }
       });
 
-    title.setTitle('NgMates');
+    title.setTitle('ngMates - we are Angular dedicated team');
 
     meta.addTags([
       { name: 'author',   content: 'ngmates.com'},
-      { name: 'keywords', content: 'angular seo, angular 4 universal, angular firebase'},
-      { name: 'description', content: 'This is our Angular SEO-based App, enjoy it!' }
+      { name: 'type', content: 'website'},
+      { name: 'description', content: 'This is our Angular SEO-based App, enjoy it!' },
+      { name: 'image', content: 'https://ngmates.com/assets/images/_about_gif.gif' },
+      { name: 'og:author',   content: 'ngmates.com'},
+      { name: 'og:type', content: 'website'},
+      { name: 'og:description', content: 'This is our Angular SEO-based App, enjoy it!' },
+      { name: 'og:image', content: 'https://ngmates.com/assets/images/_about_gif.gif' }
     ]);
   }
 

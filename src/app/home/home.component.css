@@ -38,14 +38,17 @@ div#video-block:after {
 .text-video {
 	position: relative;
   z-index: 9999;
+  text-shadow: 1px 1px 10px black;
 }
 
 .text-video h2 {
   font-size: 60px;
   font-weight: 100;
-  text-transform: uppercase;
   color: #fff;
   text-align: center;
+}
+.text-video h2 strong {
+  text-transform: uppercase;
 }
 .text-video h3 {
   font-size: 35px;
@@ -192,6 +195,21 @@ img {
   margin-bottom: 30px;
 }
 
+div.partners {
+  border-radius: 5px;
+  border: solid 5px #fdf7ff  ;
+  margin: 40px 10px ;
+  padding: 10px 0 10px 40px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+div.partners img {
+  height: 70px;
+  width: auto;
+  margin-left: 20px;
+}
+
 @media (max-width: 768px) {
     #about .about-title {
       margin-top: 40px;
@@ -200,6 +218,32 @@ img {
       margin-bottom: 30px;
     }
   }
+
+/*styles for Angular section*/
+
+.side-text {
+  text-align: center;
+}
+
+.side-text h3 {
+  margin-top: 20%;
+}
+
+.side-text p {
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .side-text h3 {
+    margin-top: 20px;
+  }
+  .side-text p {
+    margin-bottom: 20px;
+  }
+}
+
 
 /*styles for portfolio section*/
 
@@ -252,7 +296,6 @@ img {
 #portfolio-list li .more {
   opacity: 0;
   display: inline-block;
-  content: "";
   font-size: 0px;
   font-style: normal;
   font-weight: 400;
@@ -279,6 +322,7 @@ img {
   -moz-opacity: 0.75;
   -o-opacity: .75;
   top: 50%;
+  font-size: 17px;
   /*margin-top: -40px;*/
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -496,6 +540,7 @@ img {
 }
 
 .classic-title {
+  margin-top: 20px;
   margin-bottom: 12px;
   padding-bottom: 8px;
   font-weight: 300;
@@ -1366,4 +1411,28 @@ strong {
 }
 #team{
   display: none;
+}
+
+button[disabled] {
+  cursor: no-drop;
+}
+button[disabled]:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltiptext {
+  visibility: hidden;
+  width: auto;
+  padding: auto;
+  border: solid 2px orangered;
+  color: orangered;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  margin-left: 25%;
+  bottom: 3%;
 }
