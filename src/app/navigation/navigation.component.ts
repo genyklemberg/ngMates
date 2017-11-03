@@ -1,4 +1,5 @@
-import {Component, OnInit, HostListener} from '@angular/core';
+import {Component, OnInit, HostListener, Inject, Renderer2, ElementRef} from '@angular/core';
+// import {DOCUMENT} from '@angular/common';
 
 let runScrolling: any;
 
@@ -8,6 +9,12 @@ let runScrolling: any;
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  constructor(
+  // @Inject('Window') private window: Window,
+  // @Inject(DOCUMENT) private document: Document,
+  // private renderer: Renderer2,
+  private hostElement: ElementRef
+  ) {}
 
   activeClassArray: string [] = ['#video-block', '#about', '#whyNg', '#skills', '#portfolio', '#contact'];
   getActiveElements: {activeElem: any; position: number}[];
