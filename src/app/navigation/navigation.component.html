@@ -2,38 +2,60 @@
 <header class="clearfix fixed-header">
 
   <!-- Start  Logo & Naviagtion  -->
-  <div id="navigation" class="navbar navbar-default navbar-top" role="navigation" data-spy="affix" data-offset="50">
+  <div id="navigation" class="navbar navbar-default navbar-top" data-spy="affix" data-offset="50">
     <div class="container">
       <div class="navbar-header">
         <!-- Stat Toggle Nav Link For Mobiles -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <button type="button" class="navbar-toggle" (click)='collapseNav()'>
           <i class="fa fa-bars"></i>
         </button>
         <!-- End Toggle Nav Link For Mobiles -->
-        <a class="navbar-brand" href="#top" (click)="scrolling($event)">
+        <!--<a class="navbar-brand" href="#top" (click)="scrolling($event)">-->
+        <a class="navbar-brand" type='top' [ngx-scroll-to]="'video-block'">
           <img alt="logo" src="../../assets/ng-mates.png">
         </a>
       </div>
-      <div class="navbar-collapse collapse">
+      <div class="collapse navbar-collapse" role="navigation" id='collapse_nav'>
         <!-- Start Navigation List -->
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#video-block" (click)="scrolling($event)" class="active">Home</a>
+            <a [ngx-scroll-to]="'about'">About</a>
           </li>
           <li>
-            <a href="#about" (click)="scrolling($event)">About</a>
+            <a [ngx-scroll-to]="'whyNg'">Angular</a>
           </li>
           <li>
-            <a href="#whyNg" (click)="scrolling($event)">Angular</a>
+            <a [ngx-scroll-to]="'skills'">Skills</a>
           </li>
           <li>
-            <a href="#skills" (click)="scrolling($event)">Skills</a>
+            <a [ngx-scroll-to]="'portfolio'">Portfolio</a>
           </li>
-          <li>
-            <a href="#portfolio" (click)="scrolling($event)">Portfolio</a>
+          <li><a [ngx-scroll-to]="'contact'">Contacts</a>
           </li>
-          <li><a href="#contact" (click)="scrolling($event)">Contact</a>
-          </li>
+          <!--<li>-->
+            <!--<a [ngx-scroll-to]="'video-block'"-->
+            <!--&gt;Home</a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a [ngx-scroll-to]="'about'"-->
+            <!--&gt;About</a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a [ngx-scroll-to]="'whyNg'"-->
+            <!--&gt;Angular</a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a [ngx-scroll-to]="'skills'"-->
+            <!--&gt;Services</a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a [ngx-scroll-to]="'portfolio'"-->
+            <!--&gt;Portfolio</a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a [ngx-scroll-to]="'contact'"-->
+            <!--&gt;Contact</a>-->
+          <!--</li>-->
         </ul>
         <!-- End Navigation List -->
       </div>

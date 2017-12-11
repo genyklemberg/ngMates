@@ -154,7 +154,6 @@ button.navbar-toggle:hover i:before {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  position: absolute;
 }
 
 .navbar-default .navbar-nav > li > a.active:after {

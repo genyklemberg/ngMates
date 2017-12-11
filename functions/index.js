@@ -1,20 +1,76 @@
-require('zone.js/dist/zone-node');
+// const functions = require('firebase-functions');
+// const express = require('express');
+// const fetch = require('node-fetch');
+// const url = require('url');
+//
+// const app = express();
+//
+// const appUrl = 'https://ngmates.com';
+// const renderUrl = 'https://render-tron.appspot.com/render';
+//
+// function generateUrl(request) {
+//   return url.format({
+//     protocol: request.protocol,
+//     host: appUrl,
+//     pathname: request.originalUrl
+//   });
+// }
+//
+// function detectBot(userAgent) {
+//   const bots = [
+//     'googlebot',
+//     'bingbot',
+//     'yandexbot',
+//     'duckduckbot',
+//     'slurp',
+//     'twitterbot',
+//     'facebookexternalhit',
+//     'linkedinbot',
+//     'embedly',
+//     'baiduspider',
+//     'slackbot',
+//     'vkShare',
+//     'facebot',
+//     'outbrain',
+//     'W3C_Validator'
+//   ]
+//   const agent = userAgent.toLowerCase();
+//
+//   for(const bot of bots) {
+//     if(agent.indexOf(bot) > -1) {
+//       console.log('bot');
+//       return true
+//     }
+//     console.log('not bot');
+//     return false
+//   }
+//
+// }
+//
+//
+//
+// app.get('*', (req,res) => {
+//   const isBot = detectBot(req.headers['user-agent']);
+//
+//   if (isBot) {
+//     const botUrl = generateUrl(req);
+//
+//     fetch(`${renderUrl}/${botUrl}`)
+//       .then(res => res.next())
+//       .then(body => {
+//         res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
+//         res.set('Vary', 'User-Agent');
+//
+//         res.send(body.toString())
+//     });
+//   } else {
+//     fetch(`https://${appUrl}`)
+//       .then(res => res.text())
+//       .then(body => {
+//         res.send(body.toString());
+//     });
+//   }
+// });
+//
+// exports.app = functions.https.onRequest(app);
 
-const functions = require('firebase-functions');
-const express = require('express');
-const path = require('path');
-const { enableProdMode } = require('@angular/core');
-const { renderModuleFactory } = require('@angular/platform-server');
-const { AppServerModuleNgFactory } = require('./dist-ssr/main.bundle');
-enableProdMode();
-const index = require('fs')
-  .readFileSync(path.resolve(__dirname, './dist/index.html'), 'utf8')
-  .toString();
-let app = express();
-app.get('**', function(req, res) {
-  renderModuleFactory(AppServerModuleNgFactory, {
-    url: req.path,
-    document: index
-  }).then(html => res.status(200).send(html));
-});
-exports.ssr = functions.https.onRequest(app);
