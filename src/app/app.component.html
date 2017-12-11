@@ -94,12 +94,12 @@
           Depending on type of your website percent of traffic generated through mobile phones and tablet devices can be up to 80% of total number.
           Due to the strong growth of the smartphone market in recent years, this is no surprise, especially as mobile internet often provides a more viable online connection.</p>
       </div>
-      <div class='col-md-6'>
+      <div *ngIf="innerWidth > 450" class='col-md-6'>
         <img src='../../assets/images/_responsive_web_design.gif' async alt='responsive design'>
       </div>
     </div>
     <div class='row'>
-      <div class='col-md-6'>
+      <div *ngIf="innerWidth > 450" class='col-md-6'>
         <img src='../../assets/images/_realtime_data_exchange.gif' async alt='responsive design'>
       </div>
       <div class='col-md-6 side-text'>
@@ -115,12 +115,12 @@
           Preload all needed information, high-resolution images and videos behind the scenes.
           Current technologies even allow websites to work while being offline.</p>
       </div>
-      <div class='col-md-6'>
+      <div *ngIf="innerWidth > 450" class='col-md-6'>
         <img src='../../assets/images/_preloading_lazyloading.gif' async alt='responsive design'>
       </div>
     </div>
     <div class='row'>
-      <div class='col-md-6'>
+      <div *ngIf="innerWidth > 450" class='col-md-6'>
         <img src='../../assets/images/_custom_design.gif' async alt='responsive design'>
       </div>
       <div class='col-md-6 side-text'>
@@ -137,7 +137,7 @@
           Your page is reloading each time you click something on a page?</p>
         <p>With Angular you can overcome this obstacles. Let your users enjoy time spent on your website and come back again and again</p>
       </div>
-      <div class='col-md-6'>
+      <div *ngIf="innerWidth > 450" class='col-md-6'>
         <img src='../../assets/images/_no_additional_page_reloads_2.gif' async alt='responsive design'>
       </div>
     </div>
