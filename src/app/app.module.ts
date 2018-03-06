@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { Footer } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {Loading} from './shared/Loading';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -38,7 +39,7 @@ const APP_ID = 'landing3-dsl';
   imports: [
     BrowserModule.withServerTransition({appId: APP_ID}),
     BrowserAnimationsModule,
-    // WindowTokenModule,
+    HttpClientModule,
     ScrollToModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,

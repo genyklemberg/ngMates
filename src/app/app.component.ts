@@ -1,10 +1,11 @@
 import {
-  Component, ElementRef, OnInit, ViewChild
+  Component, ElementRef, Inject, OnInit, ViewChild
 } from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import {NgForm} from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { DOCUMENT } from '@angular/common';
 
 
 
@@ -20,9 +21,9 @@ export class AppComponent implements OnInit {
   showSuccessAlert = false;
   items: AngularFireList<any>;
   screenVideo = '../assets/media/office.mp4';
-  private apiUrl = 'https://us-central1-ngmates-2bcd1.cloudfunctions.net';
+  private apiUrl = 'https://us-central1-ngmates-2bcd1.cloudfunctions.net/';
 
-  constructor(public af: AngularFireDatabase, private meta: Meta, private title: Title, private el: ElementRef, private _http: HttpClient) {
+  constructor(@Inject(DOCUMENT) private document: any, public af: AngularFireDatabase, private meta: Meta, private title: Title, private el: ElementRef, private _http: HttpClient) {
 
     // this.innerWidth = (window.screen.width);
     // this.innerWidth = this.body;
@@ -317,6 +318,16 @@ export class AppComponent implements OnInit {
         return;
       })
       .catch(this._handleError);
+  }
+
+  goToUrl(): void {
+    const object = {
+      from: 'ngmates_form',
+      name: 'NgMates Google Form',
+      subject: 'Google Form ngMates'
+    }
+    this.sendFormData(object);
+    this.document.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScTQ0pxrcoQOgYHrX1AWf-q9_X5M_0LiPMD8DVCMECpg7IFog/viewform?usp=sf_link';
   }
 
   onSubmit(form: NgForm) {
