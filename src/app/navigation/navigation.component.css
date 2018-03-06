@@ -21,6 +21,10 @@ header {
   -o-transition: all 0.4s ease-in-out;
 }
 
+.white-bg {
+  background-color: #fff;
+}
+
 .wpb-mobile-menu {
   display: none;
 }

@@ -13,6 +13,10 @@ import { Footer } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {Loading} from './shared/Loading';
 
+
+
+
+
 const firebaseConfig = {
   apiKey: 'AIzaSyAKWKsfkn0x20xFKRrbUB8Ad1_lwIQ4RBk',
   authDomain: 'ngmates-2bcd1.firebaseapp.com',

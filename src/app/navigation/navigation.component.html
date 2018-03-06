@@ -1,5 +1,5 @@
 <!-- Start Header Section -->
-<header class="clearfix fixed-header">
+<header id="header" class="clearfix fixed-header">
 
   <!-- Start  Logo & Naviagtion  -->
   <div id="navigation" class="navbar navbar-default navbar-top" data-spy="affix" data-offset="50">
@@ -19,18 +19,18 @@
         <!-- Start Navigation List -->
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a [ngx-scroll-to]="'about'">About</a>
+            <a [ngx-scroll-to]="'about'" (click)='collapseNav()'>About</a>
           </li>
           <li>
-            <a [ngx-scroll-to]="'whyNg'">Angular</a>
+            <a [ngx-scroll-to]="'whyNg'" (click)='collapseNav()'>Angular</a>
           </li>
           <li>
-            <a [ngx-scroll-to]="'skills'">Skills</a>
+            <a [ngx-scroll-to]="'skills'" (click)='collapseNav()'>Skills</a>
           </li>
           <li>
-            <a [ngx-scroll-to]="'portfolio'">Portfolio</a>
+            <a [ngx-scroll-to]="'portfolio'" (click)='collapseNav()'>Portfolio</a>
           </li>
-          <li><a [ngx-scroll-to]="'contact'">Contacts</a>
+          <li><a [ngx-scroll-to]="'contact'" (click)='collapseNav()'>Contacts</a>
           </li>
           <!--<li>-->
             <!--<a [ngx-scroll-to]="'video-block'"-->
