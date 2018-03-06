@@ -1,18 +1,10 @@
 import {
-  Component, ElementRef, OnInit, ViewChild, HostListener
+  Component, ElementRef, OnInit, ViewChild
 } from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import {NgForm} from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-// import {WINDOW} from 'ngx-window-token';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  keyframes
-} from '@angular/animations';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 
@@ -22,11 +14,15 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  @ViewChild('video_block') main_block: ElementRef;
 
-  state = 'top';
+  innerWidth: any;
+  showSuccessAlert = false;
+  items: AngularFireList<any>;
+  screenVideo = '../assets/media/office.mp4';
+  private apiUrl = 'https://us-central1-ngmates-2bcd1.cloudfunctions.net';
 
-
-  constructor(public af: AngularFireDatabase, private meta: Meta, private title: Title, private el: ElementRef) {
+  constructor(public af: AngularFireDatabase, private meta: Meta, private title: Title, private el: ElementRef, private _http: HttpClient) {
 
     // this.innerWidth = (window.screen.width);
     // this.innerWidth = this.body;
@@ -58,7 +54,7 @@ export class AppComponent implements OnInit {
     //   }
     // );
 
-    window.addEventListener('scroll', function(){ 
+    window.addEventListener('scroll', function(){
 
       /*About title*/
 
@@ -247,7 +243,7 @@ export class AppComponent implements OnInit {
         softIntegr.classList.add('animation');
       } else {
         softIntegr.classList.remove('animation');
-      } 
+      }
 
       let seo = document.getElementById('seo');
       let seoPos = reloadImg.getBoundingClientRect().top;
@@ -255,7 +251,7 @@ export class AppComponent implements OnInit {
         seo.classList.add('animation');
       } else {
         seo.classList.remove('animation');
-      } 
+      }
 
       let crossPlatf = document.getElementById('cross-platf');
       let crossPlatfPos = reloadImg.getBoundingClientRect().top;
@@ -263,7 +259,7 @@ export class AppComponent implements OnInit {
         crossPlatf.classList.add('animation');
       } else {
         crossPlatf.classList.remove('animation');
-      } 
+      }
 
       let domain = document.getElementById('domain');
       let domainPos = reloadImg.getBoundingClientRect().top;
@@ -271,7 +267,7 @@ export class AppComponent implements OnInit {
         domain.classList.add('animation');
       } else {
         domain.classList.remove('animation');
-      } 
+      }
 
       let support = document.getElementById('support');
       let supportPos = reloadImg.getBoundingClientRect().top;
@@ -300,32 +296,35 @@ export class AppComponent implements OnInit {
       }
 
 
-    }
+    });
   }
-
-
-
-  // @ViewChildren('video_block, about, whyNg, skills, portfolio, contact') secItems: QueryList<ElementRef>;
-  // getActiveElements: {activeElem: any; position: number}[];
-  @ViewChild('video_block') main_block: ElementRef;
-
-  innerWidth: any;
-  showSuccessAlert = false;
-  items: AngularFireList<any>;
-  msgVal = '';
-  screenVideo = '../assets/media/office.mp4';
 
   Send(desc: {}) {
     this.items.push({message: desc});
-    this.msgVal = '';
+    this.sendFormData(desc).then(_ => {
+      this.showSuccessAlert = true;
+      setTimeout(() => { this.showSuccessAlert = false; }, 3500);
+      return;
+    });
   }
 
+  sendFormData(text) {
+    const method = 'httpEmail';
+    const _headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this._http.post(this.apiUrl + method, text, { headers: _headers })
+      .toPromise()
+      .then(_ => {
+        return;
+      })
+      .catch(this._handleError);
+  }
 
   onSubmit(form: NgForm) {
     this.Send(form.value);
     form.reset();
-    this.showSuccessAlert = true;
-    setTimeout(() => { this.showSuccessAlert = false; }, 3500);
+  }
 
+  private _handleError(error) {
+    return Promise.reject(error.message ? error.message : error.toString());
   }
 }

@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 // let runScrolling: any;
 
@@ -7,7 +7,21 @@ import {Component, HostListener} from '@angular/core';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
+
+  ngOnInit() {
+    window.addEventListener('scroll', function(){
+      // Here you forgot to update the value
+      var scrollpos = window.scrollY;
+      var header = document.getElementById("header");
+
+      if(scrollpos > 10){
+        header.classList.add("white-bg");
+      } else {
+        header.classList.remove("white-bg");
+      };
+    });
+  }
 
   collapseNav() {
     const nav = document.getElementById('collapse_nav');
@@ -72,22 +86,4 @@ export class NavigationComponent {
   //     });
   //   }
   // }
-
-
-  var scrollpos = window.scrollY;
-  var header = document.getElementById("header");
-
-
-  window.addEventListener('scroll', function(){ 
-      //Here you forgot to update the value
-    var scrollpos = window.scrollY;
-    var header = document.getElementById("header");
-
-    if(scrollpos > 10){
-      header.classList.add("white-bg");
-    };
-    else {
-      header.classList.remove("white-bg");
-    };
-  });
 }
