@@ -73,4 +73,21 @@ export class NavigationComponent {
   //   }
   // }
 
+
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+
+
+  window.addEventListener('scroll', function(){ 
+      //Here you forgot to update the value
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+
+    if(scrollpos > 10){
+      header.classList.add("white-bg");
+    };
+    else {
+      header.classList.remove("white-bg");
+    };
+  });
 }

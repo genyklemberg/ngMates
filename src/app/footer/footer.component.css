@@ -23,6 +23,8 @@ footer {
   background-color: #222;
   /*padding-top: 60px;*/
   color: #ccc;
+  position: relative;
+  z-index: 99;
 }
 
 footer a {

@@ -3,6 +3,9 @@
 <div class="container-fluid">
   <div class="row main-image">
     <app-loading *ngIf='!screenVideo' [size]="'100px'" [style]="{'margin-top': '200px'}"></app-loading>
+
+
+
     <div id="video-block" #video_block>
       <div id="video">
         <video *ngIf="innerWidth > 450"  id="my-video" loop autoplay muted plays-inline>
@@ -27,6 +30,8 @@
         </div>
       </div>
     </div>
+
+
   </div>
 </div>
 <!--main video end-->
@@ -35,7 +40,7 @@
 <div id="about" #about>
   <div class="container wow">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12" id="about-title" class="about-title">
         <div class="text-center">
           <h3 class="section-title">About Us</h3>
         </div>
@@ -44,13 +49,13 @@
       </div>
     </div>
   </div>
-  <div class="container about-container wow" >
+  <div class="container about-container wow">
     <div class="row">
-      <div class="col-md-6 about-img">
+      <div id="about-img" class="col-md-6 about-img">
         <img class="img-responsive" src="../../assets/images/_about_gif.gif" async alt="about-icon">
       </div>
 
-      <div class="col-md-6 about-content">
+      <div id="about-text" class="col-md-6 about-content">
         <!--<h2 class="about-title text-center">We provide great services and ideas</h2>-->
         <p class="about-text">
           We are a young and prospective company, that's why we care about all of our customers.
@@ -77,7 +82,7 @@
 <div id="whyNg" #whyNg>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div id="why-angular" class="col-md-12">
         <div class="text-center">
           <h3 class="section-title">Why angular?</h3>
         </div>
@@ -88,42 +93,42 @@
   </div>
   <div class='container'>
     <div class='row'>
-      <div class='col-md-6 side-text'>
+      <div class='col-md-6 side-text' id="responsive-text">
         <h3>&#9745; Responsive Design</h3>
         <p>Responsive Web Design makes your web page look good on all devices (desktops, tablets, and phones).
           Depending on type of your website percent of traffic generated through mobile phones and tablet devices can be up to 80% of total number.
           Due to the strong growth of the smartphone market in recent years, this is no surprise, especially as mobile internet often provides a more viable online connection.</p>
       </div>
-      <div *ngIf="innerWidth > 450" class='col-md-6'>
+      <div class='col-md-6' id="responsive-img">
         <img src='../../assets/images/_responsive_web_design.gif' async alt='responsive design'>
       </div>
     </div>
     <div class='row'>
-      <div *ngIf="innerWidth > 450" class='col-md-6'>
+      <div class='col-md-6' id="realtime-img">
         <img src='../../assets/images/_realtime_data_exchange.gif' async alt='responsive design'>
       </div>
-      <div class='col-md-6 side-text'>
+      <div class='col-md-6 side-text' id="realtime-text">
         <h3>&#9745; Realtime Data Exchange</h3>
         <p>In a world of Big Data resources intime responce for any actiones do be done on a website would lead to users satisfaction experience.
           Data security, which is also a crutial requirement for any websites, is a part of Angular framework so you don't need to worry about memory leaks.</p>
       </div>
     </div>
     <div class='row'>
-      <div class='col-md-6 side-text'>
+      <div class='col-md-6 side-text' id="data-text">
         <h3>&#9745; Seamless Data Loading</h3>
         <p>Thanks to such algorythm called "lazy loading" your website can handle a great amount of information, without any server delays and blank pages.
           Preload all needed information, high-resolution images and videos behind the scenes.
           Current technologies even allow websites to work while being offline.</p>
       </div>
-      <div *ngIf="innerWidth > 450" class='col-md-6'>
+      <div class='col-md-6' id="data-img">
         <img src='../../assets/images/_preloading_lazyloading.gif' async alt='responsive design'>
       </div>
     </div>
     <div class='row'>
-      <div *ngIf="innerWidth > 450" class='col-md-6'>
+      <div class='col-md-6' id="animation-img">
         <img src='../../assets/images/_custom_design.gif' async alt='responsive design'>
       </div>
-      <div class='col-md-6 side-text'>
+      <div class='col-md-6 side-text' id="animation-text">
         <h3>&#9745; Angular Animations</h3>
         <p>Motion is an important aspect in the design of modern web applications.
           Good user interfaces transition smoothly between states with engaging animations that call attention where it's needed.
@@ -131,13 +136,13 @@
       </div>
     </div>
     <div class='row'>
-      <div class='col-md-6 side-text'>
+      <div class='col-md-6 side-text' id="reload-text">
         <h3>&#9745; No Additional Page Reloads</h3>
         <p>Got tired from slow websites, even when your internet connection is pretty good?
           Your page is reloading each time you click something on a page?</p>
         <p>With Angular you can overcome this obstacles. Let your users enjoy time spent on your website and come back again and again</p>
       </div>
-      <div *ngIf="innerWidth > 450" class='col-md-6'>
+      <div class='col-md-6' id="reload-img">
         <img src='../../assets/images/_no_additional_page_reloads_2.gif' async alt='responsive design'>
       </div>
     </div>
@@ -149,7 +154,7 @@
 <div class="section service" id="skills" #skills>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12" id="service-title">
         <div class="text-center">
           <h3 class="section-title">SERVICES WE PROVIDE
           </h3>
@@ -163,7 +168,7 @@
     <div class="row">
 
       <!-- Start Service Icon 1 -->
-      <div class="col-md-3 col-sm-6 col-lg-3 service-box service-center  animated fadeIn delay-01" data-animation="fadeIn" data-animation-delay="01">
+      <div id="dev-solution" class="col-md-3 col-sm-6 col-lg-3 service-box service-center  animated fadeIn delay-01" data-animation="fadeIn" data-animation-delay="01">
         <div class="service-icon">
           <i class="fa fa-leaf icon-large"></i>
         </div>
@@ -174,7 +179,7 @@
       <!-- End Service Icon 1 -->
 
       <!-- Start Service Icon 2 -->
-      <div class="col-md-3 col-sm-6 col-lg-3 service-box service-center  animated fadeIn delay-02" data-animation="fadeIn" data-animation-delay="02">
+      <div id="web-dev" class="col-md-3 col-sm-6 col-lg-3 service-box service-center  animated fadeIn delay-02" data-animation="fadeIn" data-animation-delay="02">
         <div class="service-icon">
           <i class="fa fa-desktop icon-large"></i>
         </div>
@@ -185,7 +190,7 @@
       <!-- End Service Icon 2 -->
 
       <!-- Start Service Icon 3 -->
-      <div class="col-md-3 col-sm-6 col-lg-3 service-box service-center  animated fadeIn delay-03" data-animation="fadeIn" data-animation-delay="03">
+      <div id="ui-ux" class="col-md-3 col-sm-6 col-lg-3 service-box service-center  animated fadeIn delay-03" data-animation="fadeIn" data-animation-delay="03">
         <div class="service-icon">
           <i class="fa fa-eye icon-large"></i>
         </div>
@@ -196,7 +201,7 @@
       <!-- End Service Icon 3 -->
 
       <!-- Start Service Icon 4 -->
-      <div class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-04" data-animation="fadeIn" data-animation-delay="04">
+      <div id="soft-integr" class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-04" data-animation="fadeIn" data-animation-delay="04">
         <div class="service-icon">
           <i class="fa fa-code icon-large"></i>
         </div>
@@ -210,7 +215,7 @@
       <div class="clearfix visible-md-block visible-lg-block"></div>
 
       <!-- Start Service Icon 5 -->
-      <div class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-05" data-animation="fadeIn" data-animation-delay="05">
+      <div id="seo" class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-05" data-animation="fadeIn" data-animation-delay="05">
         <div class="service-icon">
           <i class="fa fa-rocket icon-large"></i>
         </div>
@@ -221,7 +226,7 @@
       <!-- End Service Icon 5 -->
 
       <!-- Start Service Icon 6 -->
-      <div class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-06" data-animation="fadeIn" data-animation-delay="06">
+      <div id="cross-platf" class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-06" data-animation="fadeIn" data-animation-delay="06">
         <div class="service-icon">
           <i class="fa fa-tablet icon-large"></i>
         </div>
@@ -232,7 +237,7 @@
       <!-- End Service Icon 6 -->
 
       <!-- Start Service Icon 7 -->
-      <div class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-07" data-animation="fadeIn" data-animation-delay="07">
+      <div id="domain" class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-07" data-animation="fadeIn" data-animation-delay="07">
         <div class="service-icon">
           <i class="fa fa-server icon-large"></i>
         </div>
@@ -242,7 +247,7 @@
       </div>
       <!-- End Service Icon 7 -->
       <!-- Start Service Icon 8 -->
-      <div class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-08" data-animation="fadeIn" data-animation-delay="08">
+      <div id="support" class="col-md-3 col-sm-6 col-lg-3 service-box service-center animated fadeIn delay-08" data-animation="fadeIn" data-animation-delay="08">
         <div class="service-icon">
           <i class="fa fa-umbrella icon-large"></i>
         </div>
@@ -265,7 +270,7 @@
 
   <div class="container wow">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12" id="latest-work">
         <div class="text-center">
           <h3 class="section-title">Our Latest Works</h3>
         </div>
@@ -414,11 +419,13 @@
 
 <!-- Start Contact Form -->
 <div id="contact" #contact>
-  <div class="text-center">
-    <h1 class="section-title">GET IN TOUCH</h1>
+  <div id="contact-title">
+    <div class="text-center">
+      <h1 class="section-title">GET IN TOUCH</h1>
+    </div>
+    <div class="section-title-divider"></div>
+    <h4 class="section-description">We love working with new people, please share your details, so that we can assist you!</h4>
   </div>
-  <div class="section-title-divider"></div>
-  <h4 class="section-description">We love working with new people, please share your details, so that we can assist you!</h4>
   <p></p>
   <div class="container">
     <div class="row">
@@ -491,6 +498,14 @@
         <!--<div id="msgSubmit" class="h3 text-center" [style.display]="f.submitted ? 'block' : 'none'">-->
         <!--<h1>Message has been sent</h1>-->
         <!--</div>-->
+        <div class="ask-btn">
+          <p>
+            You can answer detailed questions here
+          </p>
+          <button class="btn-system btn-large">
+            Google forms <img src="../../assets/google_forms.png">
+          </button>
+        </div>
         <div class="clearfix"></div>
       </form>
         <div class="modal-window" *ngIf="showSuccessAlert">
@@ -523,7 +538,9 @@
   </div>
 
   <div class="clearfix"></div>
-
 </div>
 <app-footer></app-footer>
+
+
+
 
