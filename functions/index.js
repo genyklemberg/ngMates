@@ -10,13 +10,14 @@ function mailgunMessage(req, res) {
   var data = {
     from: req.body.from,
     to: 'aputop@yahoo.com',
-    subject: 'Flyhigh запрос',
+    subject: 'ngMates запрос',
     // subject: req.body.subject,
     // text: req.body.text
     html: '<h1>Меня звать: '+ req.body.name + '</h1><br><p>email: ' + req.body.from +
     '</p><br><p>тема запроса: ' + req.body.subject +
     '</p><br><p>мне нужно: ' + req.body.text + '</p>'
   };
+  console.log(data);
   mailgun.messages().send(data).then(function(){
     res.status(200).json({success:true});
   }).catch(function() {
@@ -30,4 +31,3 @@ exports.httpEmail = functions.https.onRequest(function(req, res) {
     mailgunMessage(req, res);
   });
 });
-

@@ -4,8 +4,6 @@
   <div class="row main-image">
     <app-loading *ngIf='!screenVideo' [size]="'100px'" [style]="{'margin-top': '200px'}"></app-loading>
 
-
-
     <div id="video-block" #video_block>
       <div id="video">
         <video *ngIf="innerWidth > 450"  id="my-video" loop autoplay muted plays-inline>
@@ -279,12 +277,6 @@
       </div>
     </div>
   </div>
-  <!-- Start Big Heading -->
-  <!--<div class="text-center">-->
-  <!--<h1 class="section-title">These are Our Latest Works</h1>-->
-  <!--</div>-->
-  <!--<div class="section-title-divider"></div>-->
-  <!--<h4 class="section-description">We listen to our clients - that's why the result is always good</h4>-->
   <ul id="portfolio-list" class="container-fluid">
     <li class="col-md-3 col-xs-6">
       <img src="../../assets/images/portfolio-1.png" class="img-responsive"  alt="ngmates work PYTT">
@@ -353,69 +345,6 @@
   </ul>
 </div>
 <!--portfolio section end-->
-
-<!--our team section start-->
-<!--<div id="team" class="section">-->
-<!--<div class="container">-->
-<!--<div class="text-center">-->
-<!--<h1 class="section-title">Our Great Team</h1>-->
-<!--</div>-->
-<!--<div class="section-title-divider"></div>-->
-<!--<h4 class="section-description">We do what we love and we hope you'll love it too</h4>-->
-<!--<div class="row">-->
-<!--<div class="col-md-2 col-sm-6 col-xs-12 col-md-offset-1 animated fadeIn delay-03" data-animation="fadeIn" data-animation-delay="05">-->
-<!--<div class="team-member modern">-->
-<!--<div class="member-photo">-->
-<!--<img alt="" src="../../assets/evg.jpg">-->
-<!--<div class="member-name">Yevheniy Potupa<span>Founder/PM</span>-->
-<!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash;<div class="member-info">&ndash;&gt;-->
-<!--&lt;!&ndash;<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-2 col-sm-6 col-xs-12 animated fadeIn delay-04" data-animation="fadeIn" data-animation-delay="06">-->
-<!--<div class="team-member modern">-->
-<!--<div class="member-photo">-->
-<!--<img alt="" src="../../assets/oks.jpg">-->
-<!--<div class="member-name">Drul Oksana <span>Developer</span>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-2 col-sm-6 col-xs-12 animated fadeIn delay-05" data-animation="fadeIn" data-animation-delay="05">-->
-<!--<div class="team-member modern">-->
-<!--<div class="member-photo">-->
-<!--<img alt="" src="../../assets/mar.jpg">-->
-<!--<div class="member-name">Mariana Diachok <span>Developer</span>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-2 col-sm-6 col-xs-12 animated fadeIn delay-06" data-animation="fadeIn" data-animation-delay="05">-->
-<!--<div class="team-member modern">-->
-<!--<div class="member-photo">-->
-<!--<img alt="" src="../../assets/rox.jpg">-->
-<!--<div class="member-name">Roksolana Mykhalenych <span>Developer</span>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-2 col-sm-6 col-xs-12 animated fadeIn delay-06" data-animation="fadeIn" data-animation-delay="05">-->
-<!--<div class="team-member modern">-->
-<!--<div class="member-photo">-->
-<!--<img alt="" src="../../assets/vova.jpg">-->
-<!--<div class="member-name">Volodymyr Kmet <span>Developer</span>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
 
 <!-- Start Contact Form -->
 <div id="contact" #contact>
@@ -493,16 +422,10 @@
           Send
           <span class="tooltiptext">
               &nbsp; &#9762; Please, fill the required fields &nbsp;
-            </span>
+          </span>
         </button>
-        <!--<div id="msgSubmit" class="h3 text-center" [style.display]="f.submitted ? 'block' : 'none'">-->
-        <!--<h1>Message has been sent</h1>-->
-        <!--</div>-->
         <div class="ask-btn">
-          <p>Answer Sheet for Requirements:</p>
-          <!--<a class="btn-system btn-large" type='button' href='https://docs.google.com/forms/d/e/1FAIpQLScTQ0pxrcoQOgYHrX1AWf-q9_X5M_0LiPMD8DVCMECpg7IFog/viewform?usp=sf_link'>-->
-              <!--Google forms <img src="../../assets/google_forms.png">-->
-          <!--</a>-->
+          <p>Requirements Answer Sheet:</p>
           <button class="btn-system btn-large" type='button' (click)="goToUrl()">
             Google forms <img src="../../assets/google_forms.png">
           </button>
@@ -528,12 +451,12 @@
 
         <!-- Info - Icons List -->
         <ul class="icons-list">
-          <li><i class="fa fa-globe"> </i> <strong>Address:</strong> 9 Hazova Str, Lviv, Ukraine</li>
+          <li><i class="fa fa-globe"> </i> <strong>Address:</strong> 27 Zhovkivska Str, Lviv, Ukraine</li>
           <li><i class="fa fa-skype"></i> <strong>Skype:</strong> yevheniy.potupa</li>
           <li><i class="fa fa-mobile"></i> <strong>Phone:</strong> +38(095)281-66-78</li>
         </ul>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10537740.757468168!2d15.058001642727477!3d49.84827053845158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add0b3e2d327b%3A0x75d5338515144ef3!2z0LLRg9C70LjRhtGPINCT0LDQt9C-0LLQsCwgOSwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGM!5e0!3m2!1suk!2sua!4v1509581842159" width="100%" height="340px" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10145968.170018338!2d3.831862744712782!3d50.280244481228436!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add0443a6476d%3A0x2da7f8c6910e3c61!2z0LLRg9C70LjRhtGPINCW0L7QstC60ZbQstGB0YzQutCwLCAyOCwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1520428056005" width="100%" height="340px" frameborder="0" style="border:0" allowfullscreen></iframe>
 
       </div>
     </div>

@@ -4,8 +4,8 @@ import {
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import {NgForm} from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { DOCUMENT } from '@angular/common';
+import {MailService} from './shared/mail.service';
 
 
 
@@ -16,23 +16,20 @@ import { DOCUMENT } from '@angular/common';
 })
 export class AppComponent implements OnInit {
   @ViewChild('video_block') main_block: ElementRef;
-
   innerWidth: any;
   showSuccessAlert = false;
   items: AngularFireList<any>;
   screenVideo = '../assets/media/office.mp4';
-  private apiUrl = 'https://us-central1-ngmates-2bcd1.cloudfunctions.net/';
+  private apiUrl = 'http://localhost:5000/ngmates-2bcd1/us-central1/';
 
-  constructor(@Inject(DOCUMENT) private document: any, public af: AngularFireDatabase, private meta: Meta, private title: Title, private el: ElementRef, private _http: HttpClient) {
-
-    // this.innerWidth = (window.screen.width);
-    // this.innerWidth = this.body;
-    // console.log(this.innerWidth);
+  constructor(@Inject(DOCUMENT) private document: any,
+              public af: AngularFireDatabase,
+              private meta: Meta,
+              private title: Title,
+              private el: ElementRef,
+              private mailService: MailService) {
     this.items = af.list('/messages');
-
-
     title.setTitle('ngMates - we are Angular dedicated team');
-
     meta.addTags([
       { name: 'author',   content: 'ngmates.com'},
       { name: 'type', content: 'website'},
@@ -302,31 +299,34 @@ export class AppComponent implements OnInit {
 
   Send(desc: {}) {
     this.items.push({message: desc});
-    this.sendFormData(desc).then(_ => {
-      this.showSuccessAlert = true;
-      setTimeout(() => { this.showSuccessAlert = false; }, 3500);
-      return;
-    });
+    this.showSuccessAlert = true;
+    setTimeout(() => { this.showSuccessAlert = false; }, 3500);
+    // this.mailService.sendFormData(desc);
+    //   .then(_ => {
+    //   return;
+    // });
   }
 
-  sendFormData(text) {
-    const method = 'httpEmail';
-    const _headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.post(this.apiUrl + method, text, { headers: _headers })
-      .toPromise()
-      .then(_ => {
-        return;
-      })
-      .catch(this._handleError);
-  }
+  // sendFormData(text) {
+  //   const method = 'httpEmail';
+  //   const _headers = new HttpHeaders().set('Content-Type', 'application/json');
+  //   console.log(text);
+  //   return this._http.post('http://localhost:5000/ngmates-2bcd1/us-central1/', text);
+  //   // return this._http.post(this.apiUrl + method, text, { headers: _headers });
+  //     // .toPromise()
+  //     // .then(_ => {
+  //     //   return;
+  //     // })
+  //     // .catch(this._handleError);
+  // }
 
   goToUrl(): void {
-    const object = {
-      from: 'ngmates_form',
-      name: 'NgMates Google Form',
-      subject: 'Google Form ngMates'
-    }
-    this.sendFormData(object);
+    // const object = {
+    //   from: 'ngmates_form',
+    //   name: 'NgMates Google Form',
+    //   subject: 'Google Form ngMates'
+    // }
+    // this.mailService.sendFormData(object);
     this.document.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScTQ0pxrcoQOgYHrX1AWf-q9_X5M_0LiPMD8DVCMECpg7IFog/viewform?usp=sf_link';
   }
 
@@ -335,7 +335,7 @@ export class AppComponent implements OnInit {
     form.reset();
   }
 
-  private _handleError(error) {
-    return Promise.reject(error.message ? error.message : error.toString());
-  }
+  // private _handleError(error) {
+  //   return Promise.reject(error.message ? error.message : error.toString());
+  // }
 }
