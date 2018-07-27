@@ -15,6 +15,7 @@ import {MailService} from './shared/mail.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  closeResult: string;
   @ViewChild('video_block') main_block: ElementRef;
   innerWidth: any;
   showSuccessAlert = false;
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
       { name: 'og:image', content: 'https://ngmates.com/assets/images/_about_gif.gif' }
     ]);
   }
+
 
   ngOnInit() {
     this.innerWidth = this.main_block.nativeElement.offsetWidth;
@@ -296,6 +298,8 @@ export class AppComponent implements OnInit {
 
     });
   }
+
+  
 
   Send(desc: {}) {
     this.items.push({message: desc});

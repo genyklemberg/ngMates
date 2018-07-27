@@ -113,6 +113,32 @@ div#video-block:after {
   animation: spin 3s;
   -webkit-animation: spin 3s;
 }
+
+.button-modal {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ee3733;
+  font-size: 1.5em;
+  padding: 0.8em 2.2em;
+  transition: background-color 1s;
+}
+.button-modal:hover {
+  background-color: #ee3733;
+}
+
+.modal-form {
+  text-shadow: none;
+}
+
+body.modal-open {
+  overflow: hidden; /* Optional: hides body scroll bar when modal is open. */
+}
+
+.modal {
+  opacity: 0; /* Fade in/out animation. */
+  transition: opacity 0.2s ease-in;
+}
+
 @keyframes spin {
   to { -webkit-transform: rotate(150deg); }
 }
@@ -501,8 +527,20 @@ div.partners img {
   margin: 0 auto;
 }
 
+@media (min-width: 240px) and (max-width: 767px) {
+  .modal-inside {
+    width: 80vw;
+  }
+  
+  .tooltiptext-modal {
+    font-size: 0.7em;
+    margin-right: 5%;
+    bottom: 0.8% !important;
+  }
+}
 
 @media only screen and (max-width: 442px) {
+  
   #portfolio-list li:hover .more {
     font-size: 12px;
     top: 52%;
@@ -697,6 +735,7 @@ strong {
   color: #fff;
   opacity: 0.8;
 }
+
 
 .modal-window {
   position: fixed;
@@ -1578,6 +1617,10 @@ button[disabled]:hover .tooltiptext {
   z-index: 1;
   margin-left: 25%;
   bottom: 92px;
+}
+
+.tooltiptext-modal {
+  bottom: 3.5%;
 }
 
 

@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import {Loading} from './shared/Loading';
 import {HttpClientModule} from '@angular/common/http';
 import {MailService} from './shared/mail.service';
+import { ModalModule } from 'angular-custom-modal';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAKWKsfkn0x20xFKRrbUB8Ad1_lwIQ4RBk',
@@ -38,6 +40,7 @@ const APP_ID = 'landing3-dsl';
     BrowserAnimationsModule,
     HttpClientModule,
     ScrollToModule.forRoot(),
+    ModalModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
