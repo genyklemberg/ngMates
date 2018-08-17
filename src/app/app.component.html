@@ -2,14 +2,14 @@
 <!--main video start-->
 <div class="container-fluid">
   <div class="row main-image">
-    <app-loading *ngIf='!screenVideo' [size]="'100px'" [style]="{'margin-top': '200px'}"></app-loading>
+    <!--<app-loading *ngIf='!screenVideo' [size]="'100px'" [style]="{'margin-top': '200px'}"></app-loading>-->
 
-    <div id="video-block" #video_block>
+    <div id="video-block" style='margin: 76px auto 0;'>
       <div id="video">
-        <video *ngIf="innerWidth > 450"  id="my-video" loop autoplay muted plays-inline>
-          <source [src]="screenVideo" async type="video/mp4">
-        </video>
-        <div class="mobileImg">
+        <!--<video *ngIf="innerWidth > 450"  id="my-video" loop autoplay muted>-->
+          <!--<source [src]="screenVideo" type="video/mp4">-->
+        <!--</video>-->
+        <div class="mobileImg" id="my-video">
           <!--<img [src]="screenImg" alt="office" class="img-responsive">-->
         </div>
         <div class="text-video text-center">
@@ -17,7 +17,7 @@
             <span>Welcome to <span style="color: #ee3733;"><strong>ng<span style='color: darkgrey;'>Mates</span></strong></span></span>
           </h2>
           <h3>
-            <span><strong>We provide good solutions to your business</strong></span>
+            <span><strong>We provide good solutions for your business</strong></span>
           </h3>
           <div class='page-scroll'>
             <a [ngx-scroll-to]="'contact'" class="btn btn-circle">
@@ -25,91 +25,91 @@
               <!--<i class="fa fa-angle-double-down animated"></i>-->
             </a>
           </div>
-          <button type="button" class="btn button-modal" (click)="htmlInsideModal.open()">
-            Contact us
-          </button>
-<modal class="modal-form " #htmlInsideModal>
-  <ng-template #modalBody>
-    
-      <div class="text-left modal-inside">
+          <!--<button type="button" class="btn button-modal" (click)="htmlInsideModal.open()">-->
+            <!--Contact us-->
+          <!--</button>-->
+<!--<modal class="modal-form " #htmlInsideModal>-->
+  <!--<ng-template #modalBody>-->
+    <!---->
+      <!--<div class="text-left modal-inside">-->
 
-        <h4 class="classic-title"><span>Contact Us</span></h4>
-        <form role="form" id="contactForm" data-toggle="validator" class="shake" (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div class="form-group">
-          <div class="controls">
-            <input
-              type="text"
-              placeholder="*Name"
-              required
-              name="name"
-              #name="ngModel"
-              ngModel>
-            <div class="help-block with-errors" *ngIf="!name.valid && name.touched">
-              <p>Please enter your name</p>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="controls">
-            <input
-              type="email"
-              class="email"
-              placeholder="*Email" required
-              name="email"
-              email
-              ngModel
-              #email="ngModel"
-            >
-            <div class="help-block with-errors"  *ngIf="!email.valid && email.touched">
-              <p>Please enter your email</p>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="controls">
-            <input type="text"
-                   placeholder="*Subject" required
-                   name="subject"
-                   ngModel
-                   #subject="ngModel"
-            >
-            <div class="help-block with-errors"  *ngIf="!subject.valid && subject.touched">
-              <p>Please enter your message subject</p>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="controls">
-              <textarea
-                rows="7"
-                placeholder="*Message"
-                required
-                name="message"
-                #message="ngModel"
-                ngModel></textarea>
-            <div class="help-block with-errors"  *ngIf="!message.valid && message.touched">
-              <p>Write your message</p>
-            </div>
-          </div>
-        </div>
-        <button (click)="htmlInsideModal.close()" type="submit" id="submit" class="btn-system btn-large" [disabled]="!f.valid">
-          Send
-          <span class="tooltiptext tooltiptext-modal">
-              &nbsp; &#9762; Please, fill the required fields &nbsp;
-          </span>
-        </button>
-        <div class="clearfix"></div>
-      </form>
-        <div class="modal-window" *ngIf="showSuccessAlert">
-          <div class="modal-content">
-            <div class="modal-header">
-              <p class="modal-title">Your message has been sent. We will contact you soon :)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-  </ng-template>
-</modal>
+        <!--<h4 class="classic-title"><span>Contact Us</span></h4>-->
+        <!--<form role="form" id="contactForm" data-toggle="validator" class="shake" (ngSubmit)="onSubmit(f)" #f="ngForm">-->
+        <!--<div class="form-group">-->
+          <!--<div class="controls">-->
+            <!--<input-->
+              <!--type="text"-->
+              <!--placeholder="*Name"-->
+              <!--required-->
+              <!--name="name"-->
+              <!--#name="ngModel"-->
+              <!--ngModel>-->
+            <!--<div class="help-block with-errors" *ngIf="!name.valid && name.touched">-->
+              <!--<p>Please enter your name</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<div class="controls">-->
+            <!--<input-->
+              <!--type="email"-->
+              <!--class="email"-->
+              <!--placeholder="*Email" required-->
+              <!--name="email"-->
+              <!--email-->
+              <!--ngModel-->
+              <!--#email="ngModel"-->
+            <!--&gt;-->
+            <!--<div class="help-block with-errors"  *ngIf="!email.valid && email.touched">-->
+              <!--<p>Please enter your email</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<div class="controls">-->
+            <!--<input type="text"-->
+                   <!--placeholder="*Subject" required-->
+                   <!--name="subject"-->
+                   <!--ngModel-->
+                   <!--#subject="ngModel"-->
+            <!--&gt;-->
+            <!--<div class="help-block with-errors"  *ngIf="!subject.valid && subject.touched">-->
+              <!--<p>Please enter your message subject</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<div class="controls">-->
+              <!--<textarea-->
+                <!--rows="7"-->
+                <!--placeholder="*Message"-->
+                <!--required-->
+                <!--name="message"-->
+                <!--#message="ngModel"-->
+                <!--ngModel></textarea>-->
+            <!--<div class="help-block with-errors"  *ngIf="!message.valid && message.touched">-->
+              <!--<p>Write your message</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<button (click)="htmlInsideModal.close()" type="submit" id="submit" class="btn-system btn-large" [disabled]="!f.valid">-->
+          <!--Send-->
+          <!--<span class="tooltiptext tooltiptext-modal">-->
+              <!--&nbsp; &#9762; Please, fill the required fields &nbsp;-->
+          <!--</span>-->
+        <!--</button>-->
+        <!--<div class="clearfix"></div>-->
+      <!--</form>-->
+        <!--<div class="modal-window" *ngIf="showSuccessAlert">-->
+          <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+              <!--<p class="modal-title">Your message has been sent. We will contact you soon :)</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+  <!--</ng-template>-->
+<!--</modal>-->
         </div>
       </div>
     </div>
@@ -128,7 +128,7 @@
           <h3 class="section-title">About Us</h3>
         </div>
         <div class="section-title-divider"></div>
-        <h4 class="section-description">NgMates is focused on Angular technology that fits all our customers needs</h4>
+        <h4 class="section-description">NgMates is focused on Angular technology that fits all our customer's needs</h4>
       </div>
     </div>
   </div>
@@ -141,11 +141,12 @@
       <div id="about-text" class="col-md-6 about-content">
         <!--<h2 class="about-title text-center">We provide great services and ideas</h2>-->
         <p class="about-text">
-          We are a young and prospective company, that's why we care about all of our customers.
-          Our Product Managers have expertise in a wide range of industries including Consumer Electronics, E-commerce, Sports & E-sports,
-          HoReCa and more to consult you for the best solutions your business need. We are focused on small and middle-sized businesses and provide
-          a different type of services, from regular Landing Pages with configured SEO to complex 100+ pages using edge technologies. You will be surprised
-          with price range we offer, that is possible because we already have frameworks to speed up our development.
+          We are an Angular focused company, that's why we are professionals in what we do. We will not just make what you want, but make it work for a long time. Our Product Managers have expertise in a wide range of industries including Consumer Electronics, E-commerce, Sports & E-sports, HoReCa and more to consult you about the best solutions your business need. We are focused on prospective businesses and start-ups and provide a different type of services, from regular Landing Pages with configured SEO to complex 100+ pages using edge technologies. You will be surprised by the price range we offer, that is possible because we already have frameworks to speed up our development. <strong style='color: red'>Angular</strong> is a joint project of <strong style='color: green'>Google
+        </strong> and
+          <strong style='color: blue'>Microsoft</strong>,
+          so don't worry
+          about future
+          maintenance.
         </p>
         <p class="about-text">
           We are always focused on your needs, that's why our works are so good
@@ -170,7 +171,7 @@
           <h3 class="section-title">Why angular?</h3>
         </div>
         <div class="section-title-divider"></div>
-        <h4 class="section-description">Angular has many features that allow us to configure apps to be as fast and high preforming as possible</h4>
+        <h4 class="section-description">Angular has many features that allow us to configure apps to be as fast and high performing as possible</h4>
       </div>
     </div>
   </div>
@@ -178,9 +179,7 @@
     <div class='row'>
       <div class='col-md-6 side-text' id="responsive-text">
         <h3>&#9745; Responsive Design</h3>
-        <p>Responsive Web Design makes your web page look good on all devices (desktops, tablets, and phones).
-          Depending on type of your website percent of traffic generated through mobile phones and tablet devices can be up to 80% of total number.
-          Due to the strong growth of the smartphone market in recent years, this is no surprise, especially as mobile internet often provides a more viable online connection.</p>
+        <p>Responsive Web Design makes your web page look good on all devices (desktops, tablets, and phones). Depending on the type of your website percent of traffic generated through mobile phones and tablet devices can be up to 80% of the total number. Due to the strong growth of the smart-phones market in recent years, this is no surprise, especially as mobile internet often provides a more viable online connection.</p>
       </div>
       <div class='col-md-6' id="responsive-img">
         <img src='../../assets/images/_responsive_web_design.gif' async alt='responsive design'>
@@ -191,17 +190,14 @@
         <img src='../../assets/images/_realtime_data_exchange.gif' async alt='responsive design'>
       </div>
       <div class='col-md-6 side-text' id="realtime-text">
-        <h3>&#9745; Realtime Data Exchange</h3>
-        <p>In a world of Big Data resources intime responce for any actiones do be done on a website would lead to users satisfaction experience.
-          Data security, which is also a crutial requirement for any websites, is a part of Angular framework so you don't need to worry about memory leaks.</p>
+        <h3>&#9745; Real Time Data Exchange</h3>
+        <p>In a world of Big Data resources, the in-time response for any actions to be done on a website would lead to users satisfaction experience. Data security, which is also a crucial requirement for any websites, is a part of the Angular framework so you don't need to worry about memory leaks.</p>
       </div>
     </div>
     <div class='row'>
       <div class='col-md-6 side-text' id="data-text">
         <h3>&#9745; Seamless Data Loading</h3>
-        <p>Thanks to such algorythm called "lazy loading" your website can handle a great amount of information, without any server delays and blank pages.
-          Preload all needed information, high-resolution images and videos behind the scenes.
-          Current technologies even allow websites to work while being offline.</p>
+        <p>Thanks to such an algorithm called "lazy loading" your website can handle a great amount of information, without any server delays and blank pages. Preload all needed information, high-resolution images, and videos behind the scenes. Current technologies even allow websites to work while being offline.</p>
       </div>
       <div class='col-md-6' id="data-img">
         <img src='../../assets/images/_preloading_lazyloading.gif' async alt='responsive design'>
@@ -222,8 +218,8 @@
       <div class='col-md-6 side-text' id="reload-text">
         <h3>&#9745; No Additional Page Reloads</h3>
         <p>Got tired from slow websites, even when your internet connection is pretty good?
-          Your page is reloading each time you click something on a page?</p>
-        <p>With Angular you can overcome this obstacles. Let your users enjoy time spent on your website and come back again and again</p>
+          Is your page reloading each time you click something on a page?</p>
+        <p>With Angular, you can overcome these obstacles. Let your users enjoy time spent on your website and come back again and again</p>
       </div>
       <div class='col-md-6' id="reload-img">
         <img src='../../assets/images/_no_additional_page_reloads_2.gif' async alt='responsive design'>
@@ -243,7 +239,7 @@
           </h3>
         </div>
         <div class="section-title-divider"></div>
-        <h4 class="section-description">We will help you to achieve most of your goals in one place</h4>
+        <h4 class="section-description">We'll help you to achieve most of your goals in one place</h4>
       </div>
     </div>
   </div>
@@ -358,7 +354,7 @@
           <h3 class="section-title">Our Latest Works</h3>
         </div>
         <div class="section-title-divider"></div>
-        <h4 class="section-description">We listen to our clients - that's why the result is always good</h4>
+        <h4 class="section-description">We listen to our clients - that's why the results are always good</h4>
       </div>
     </div>
   </div>
@@ -372,12 +368,12 @@
       <a href="https://pytt-living.com/" target="_blank"><i class="more">View</i></a>
     </li>
     <li class="col-md-3 col-xs-6">
-      <img src="../../assets/images/portfolio-8.png" class="img-responsive" alt="ngmates work cybergates.gg">
+      <img src="../../assets/images/flyhigh.png" class="img-responsive" alt="ngmates work flyhigh">
       <div class="portfolio-item-content">
-        <span class="header">Cyber Gates</span>
-        <p class="body">Angular web development, design</p>
+        <span class="header">Fly High</span>
+        <p class="body">Angular web development + Firebase</p>
       </div>
-      <a href="https://cybergates.gg" target="_blank"><i class="more">View</i></a>
+      <a href="https://flyhigh-5416b.firebaseapp.com/home" target="_blank"><i class="more">View</i></a>
     </li>
     <li class="col-md-3 col-xs-6">
       <img src="../../assets/images/portfolio-2.png" class="img-responsive" alt="ngmates work JoinUp">
@@ -438,94 +434,97 @@
       <h1 class="section-title">GET IN TOUCH</h1>
     </div>
     <div class="section-title-divider"></div>
-    <h4 class="section-description">We love working with new people, please share your details, so that we can assist you!</h4>
+    <h4 class="section-description">We love working with new people and care much about our customers</h4>
   </div>
   <p></p>
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
+      <!--<div class="col-md-8">-->
 
-        <h4 class="classic-title"><span>Contact Us</span></h4>
-        <form role="form" id="contactForm" data-toggle="validator" class="shake" (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div class="form-group">
-          <div class="controls">
-            <input
-              type="text"
-              placeholder="*Name"
-              required
-              name="name"
-              #name="ngModel"
-              ngModel>
-            <div class="help-block with-errors" *ngIf="!name.valid && name.touched">
-              <p>Please enter your name</p>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="controls">
-            <input
-              type="email"
-              class="email"
-              placeholder="*Email" required
-              name="email"
-              email
-              ngModel
-              #email="ngModel"
-            >
-            <div class="help-block with-errors"  *ngIf="!email.valid && email.touched">
-              <p>Please enter your email</p>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="controls">
-            <input type="text"
-                   placeholder="*Subject" required
-                   name="subject"
-                   ngModel
-                   #subject="ngModel"
-            >
-            <div class="help-block with-errors"  *ngIf="!subject.valid && subject.touched">
-              <p>Please enter your message subject</p>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="controls">
-              <textarea
-                rows="7"
-                placeholder="*Message"
-                required
-                name="message"
-                #message="ngModel"
-                ngModel></textarea>
-            <div class="help-block with-errors"  *ngIf="!message.valid && message.touched">
-              <p>Write your message</p>
-            </div>
-          </div>
-        </div>
-        <button type="submit" id="submit" class="btn-system btn-large" [disabled]="!f.valid">
-          Send
-          <span class="tooltiptext">
-              &nbsp; &#9762; Please, fill the required fields &nbsp;
-          </span>
-        </button>
-        <div class="ask-btn">
-          <p>Requirements Answer Sheet:</p>
-          <button class="btn-system btn-large" type='button' (click)="goToUrl()">
-            Google forms <img src="../../assets/google_forms.png">
-          </button>
+        <!--<h4 class="classic-title"><span>Contact Us</span></h4>-->
+        <!--<form role="form" id="contactForm" data-toggle="validator" class="shake" (ngSubmit)="onSubmit(f)" #f="ngForm">-->
+        <!--<div class="form-group">-->
+          <!--<div class="controls">-->
+            <!--<input-->
+              <!--type="text"-->
+              <!--placeholder="*Name"-->
+              <!--required-->
+              <!--name="name"-->
+              <!--#name="ngModel"-->
+              <!--ngModel>-->
+            <!--<div class="help-block with-errors" *ngIf="!name.valid && name.touched">-->
+              <!--<p>Please enter your name</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<div class="controls">-->
+            <!--<input-->
+              <!--type="email"-->
+              <!--class="email"-->
+              <!--placeholder="*Email" required-->
+              <!--name="email"-->
+              <!--email-->
+              <!--ngModel-->
+              <!--#email="ngModel"-->
+            <!--&gt;-->
+            <!--<div class="help-block with-errors"  *ngIf="!email.valid && email.touched">-->
+              <!--<p>Please enter your email</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<div class="controls">-->
+            <!--<input type="text"-->
+                   <!--placeholder="*Subject" required-->
+                   <!--name="subject"-->
+                   <!--ngModel-->
+                   <!--#subject="ngModel"-->
+            <!--&gt;-->
+            <!--<div class="help-block with-errors"  *ngIf="!subject.valid && subject.touched">-->
+              <!--<p>Please enter your message subject</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<div class="controls">-->
+              <!--<textarea-->
+                <!--rows="7"-->
+                <!--placeholder="*Message"-->
+                <!--required-->
+                <!--name="message"-->
+                <!--#message="ngModel"-->
+                <!--ngModel></textarea>-->
+            <!--<div class="help-block with-errors"  *ngIf="!message.valid && message.touched">-->
+              <!--<p>Write your message</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<button type="submit" id="submit" class="btn-system btn-large" [disabled]="!f.valid">-->
+          <!--Send-->
+          <!--<span class="tooltiptext">-->
+              <!--&nbsp; &#9762; Please, fill the required fields &nbsp;-->
+          <!--</span>-->
+        <!--</button>-->
+        <!--<div class="ask-btn">-->
+          <!--<p>Requirements Answer Sheet:</p>-->
+          <!--<button class="btn-system btn-large" type='button' (click)="goToUrl()">-->
+            <!--Google forms <img src="../../assets/google_forms.png">-->
+          <!--</button>-->
 
-        </div>
-        <div class="clearfix"></div>
-      </form>
-        <div class="modal-window" *ngIf="showSuccessAlert">
-          <div class="modal-content">
-            <div class="modal-header">
-              <p class="modal-title">Your message has been sent. We will contact you soon :)</p>
-            </div>
-          </div>
-        </div>
+        <!--</div>-->
+        <!--<div class="clearfix"></div>-->
+      <!--</form>-->
+        <!--<div class="modal-window" *ngIf="showSuccessAlert">-->
+          <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+              <!--<p class="modal-title">Your message has been sent. We will contact you soon :)</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <div class='col-md-8'>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10145968.170018338!2d3.831862744712782!3d50.280244481228436!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add0443a6476d%3A0x2da7f8c6910e3c61!2z0LLRg9C70LjRhtGPINCW0L7QstC60ZbQstGB0YzQutCwLCAyOCwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1520428056005" width="100%" height="340px" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
       <div class="col-md-4">
 
@@ -537,12 +536,31 @@
 
         <!-- Info - Icons List -->
         <ul class="icons-list">
-          <li><i class="fa fa-globe"> </i> <strong>Address:</strong> 27 Zhovkivska Str, Lviv, Ukraine</li>
-          <li><i class="fa fa-skype"></i> <strong>Skype:</strong> yevheniy.potupa</li>
-          <li><i class="fa fa-mobile"></i> <strong>Phone:</strong> +38(095)281-66-78</li>
+          <li>
+            <i class="fa fa-globe"> </i> <strong>Address:</strong>
+            <p>27 Zhovkivska Str, Lviv, Ukraine</p>
+          </li>
+          <li>
+            <i class="fa fa-skype"></i> <strong>Skype:</strong>
+            <p>yevheniy.potupa</p>
+          </li>
+          <li>
+            <i class="fa fa-mobile"></i> <strong>Phone:</strong>
+            <p>+38(095)281-66-78</p>
+          </li>
+          <li>
+            <div class="ask-btn row">
+              <div class='col-md-12'>
+                <p>Requirements Answer Sheet:</p>
+              </div>
+              <div class='col-md-12' style='padding-top: 10px'>
+                <button class="btn-system btn-large" type='button' (click)="goToUrl()">
+                  Google forms <img src="../../assets/google_forms.png">
+                </button>
+              </div>
+            </div>
+          </li>
         </ul>
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10145968.170018338!2d3.831862744712782!3d50.280244481228436!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add0443a6476d%3A0x2da7f8c6910e3c61!2z0LLRg9C70LjRhtGPINCW0L7QstC60ZbQstGB0YzQutCwLCAyOCwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1520428056005" width="100%" height="340px" frameborder="0" style="border:0" allowfullscreen></iframe>
 
       </div>
     </div>

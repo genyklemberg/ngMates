@@ -16,11 +16,11 @@ import {MailService} from './shared/mail.service';
 })
 export class AppComponent implements OnInit {
   closeResult: string;
-  @ViewChild('video_block') main_block: ElementRef;
-  innerWidth: any;
+  // @ViewChild('video_block') main_block: ElementRef;
+  // innerWidth: any;
   showSuccessAlert = false;
   items: AngularFireList<any>;
-  screenVideo = '../assets/media/office.mp4';
+  // screenVideo = '../assets/media/office.mp4';
   private apiUrl = 'http://localhost:5000/ngmates-2bcd1/us-central1/';
 
   constructor(@Inject(DOCUMENT) private document: any,
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.innerWidth = this.main_block.nativeElement.offsetWidth;
+    // this.innerWidth = this.main_block.nativeElement.offsetWidth;
     // this.getActiveElements = this.secItems.map(
     //   item => {
     //     const activeElem = item;

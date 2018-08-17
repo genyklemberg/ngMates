@@ -47,7 +47,7 @@ body {
 
 .mobileImg {
   position: absolute;
-  background-image: url("../assets/ngmates_desktop.png");
+  background-image: url("../assets/Lukas-min.jpg");
   z-index: 1;
   min-width: 100%;
   min-height: 100%;
@@ -758,22 +758,22 @@ strong {
 }
 
 .ask-btn {
-  margin: 15px 0;
-  padding: 10px;
-  border-radius: 3px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
+  margin-top: 15px;
+  /*margin: 15px 0;*/
+  /*padding: 10px;*/
+  /*border-radius: 3px;*/
+  /*display: flex;*/
+  /*justify-content: flex-end;*/
+  /*align-items: center;*/
+  /*position: relative;*/
   /*-webkit-box-shadow: 0px 0px 20px 1px rgba(5,65,120,1);
   -moz-box-shadow: 0px 0px 20px 1px rgba(5,65,120,1);
   box-shadow: 0px 0px 20px 1px rgba(5,65,120,1);*/
 }
 .ask-btn p {
   margin: 0;
-  padding-right: 25px;
   position: relative;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -1293,7 +1293,6 @@ strong {
 }
 .support-main .icon-description p{
   color: #fff;
-
 }
 
 /*************** Service Box ***************/
